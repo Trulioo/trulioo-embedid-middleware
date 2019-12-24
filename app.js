@@ -1,9 +1,6 @@
 var express = require('express')
 var app = express()
-const truliooClient = require('./TruliooClient');
-
-app.get('/truliooAccessToken', truliooClient);
-
+require('./src/TruliooClient')(app);
 
 app.get('/', function (req, res) {
     res.send('Hello World!')
