@@ -2,13 +2,16 @@
   "name": "trulioo-embedid-node",
   "version": "1.0.0",
   "description": "Nodejs plugin for EmbedID integration",
-  "main": "TruliooClient.js",
+  "main": "src/main.js",
   "dependencies": {
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "express": "^4.17.1",
     "assert": "^2.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "express": "^4.17.1",
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
   },
@@ -24,15 +27,15 @@
     "nodejs",
     "plugin"
   ],
-  "files": [
-    "/src/TruliooClient.js"
-  ],
   "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
   },
+  "files": [
+    "src/"
+  ],
   "author": "Menelaos Kotsollaris",
   "license": "Apache-2.0",
   "bugs": {

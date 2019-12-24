@@ -1,9 +1,11 @@
-var express = require('express')
-var app = express()
-require('./src/TruliooClient')(app);
+const express = require('express');
 
-app.get('/', function (req, res) {
-    res.send('Hello World!')
-})
+const app = express();
+const port = 3000;
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-app.listen(3000)
+require('./src/main')(app);
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
