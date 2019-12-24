@@ -8,13 +8,14 @@
   },
   "devDependencies": {
     "assert": "^2.0.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
     "express": "^4.17.1",
     "jest": "^24.9.0",
-    "supertest": "^4.0.2",
-    "semantic-release": "^15.14.0"
+    "semantic-release": "^15.14.0",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "test": "jest"
@@ -42,5 +43,10 @@
   "bugs": {
     "url": "https://github.com/Trulioo/trulioo-embedid-node/issues"
   },
-  "homepage": "https://github.com/Trulioo/trulioo-embedid-node#readme"
+  "homepage": "https://github.com/Trulioo/trulioo-embedid-node#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
