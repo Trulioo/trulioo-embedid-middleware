@@ -7,5 +7,5 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 require('./src/main')(app);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('go to /trulioo-api/generateAccessToken 🚀');
 });

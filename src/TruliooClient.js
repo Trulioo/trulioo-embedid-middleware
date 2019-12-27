@@ -8,7 +8,7 @@ function TruliooClient(app) {
     rejectUnauthorized: false,
     'Access-Control-Allow-Origin': '*',
   };
-  const url = 'http://localhost:8855/generateAccessToken';
+  const url = 'https://api-gateway-admin.trulioo.com/generateAccessToken';
 
   app.get('/trulioo-api/generateAccessToken', (_, res) => {
     request({ method: 'GET', url, headers },
