@@ -6,6 +6,8 @@
 
 Express middleware 🚀
 
+Grab your `TRULIOO_API_KEY` and `TRULIOO_EMBEDID_PUBLIC_KEY` from the [Trulioo Dev Portal](https://gateway-admin.trulioo.com/) and start using EmbedID 👾
+
 ```
 require('trulioo-embedid-node')(app);
 ```
