@@ -11,7 +11,7 @@ function TruliooClient(app) {
   };
 
   const accessTokenBaseURL = !process.env.TRULIOO_EMBEDID_BASE_URL
-    ? 'https://gateway.trulioo.com/trial' : process.env.TRULIOO_EMBEDID_BASE_URL;
+    ? 'https://api-gateway-admin.trulioo.com' : process.env.TRULIOO_EMBEDID_BASE_URL;
   const url = `${accessTokenBaseURL}/embedids/tokens`;
 
   app.get('/trulioo-api/embedids/tokens/:publicKey', (req, res) => {
