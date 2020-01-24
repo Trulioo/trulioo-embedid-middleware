@@ -13,6 +13,7 @@ require('trulioo-embedid-node')(app);
 ```
 
 ## Environment Variables
+
 ```
 TRULIOO_API_KEY = [Required] Trulioo API key 
 TRULIOO_EMBEDID_BASE_URL = [Optional] EmbedID Base URL
