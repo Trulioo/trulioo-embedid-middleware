@@ -16,6 +16,4 @@ require('trulioo-embedid-node')(app);
 
 ```
 TRULIOO_API_KEY = [Required] Trulioo API key 
-TRULIOO_EMBEDID_BASE_URL = [Optional] EmbedID Base URL
-TRULIOO_EMBEDID_PUBLIC_KEY = [Optional] EmbedID Experience Public Key
 ```
