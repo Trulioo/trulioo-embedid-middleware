@@ -1,6 +1,5 @@
 {
   "name": "trulioo-embedid-node",
-  "version": "0.0.0-development",
   "description": "Nodejs plugin for EmbedID integration",
   "main": "src/main.js",
   "dependencies": {
