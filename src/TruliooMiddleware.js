@@ -1,5 +1,7 @@
 import request from 'request';
 
+
+
 const TruliooMiddleware = (config = {}) => {
   const { apiKey } = config;
   
@@ -17,11 +19,10 @@ const TruliooMiddleware = (config = {}) => {
     if (req.url.match(/(.*)\/trulioo-api\/embedids\/tokens\/(.*)\w+/)) {
       const urlParts = req.url.split('/');
       const urlPublicKey = urlParts[urlParts.length - 1];
+      // override publicKey if it's passed as an environment or config 
+      const embedIdPublicKey = process.env.TRULIOO_EMBEDID_PUBLIC_KEY || urlPublicKey;
 
       try {
-        // override publicKey if it's passed as an environment or config 
-        const embedIdPublicKey = process.env.TRULIOO_EMBEDID_PUBLIC_KEY || urlPublicKey;
-  
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Content-Type', 'application/json');
 
