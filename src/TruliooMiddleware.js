@@ -1,7 +1,5 @@
 import request from 'request';
 
-
-
 const TruliooMiddleware = (config = {}) => {
   const { apiKey } = config;
   
@@ -43,7 +41,7 @@ const TruliooMiddleware = (config = {}) => {
         console.log('[/trulioo-api/embedids/tokens/]', error);
       }
     } else if (next) {
-      next()
+      next();
     };
   }
 }
