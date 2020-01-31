@@ -1,3 +1,3 @@
-import truliooMiddleware from './TruliooMiddleware';
+const truliooMiddleware = require('./TruliooMiddleware');
 
-export default truliooMiddleware;
+module.exports = truliooMiddleware;

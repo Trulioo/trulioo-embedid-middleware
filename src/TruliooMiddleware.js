@@ -1,10 +1,13 @@
-import request from 'request';
+const request = require('request');
 
-const TruliooMiddleware = (config = {}) => {
+const truliooMiddleware = (config = {}) => {
   const { apiKey } = config;
   
+  const truliooApiKey = apiKey || process.env.TRULIOO_API_KEY;
+  if (!truliooApiKey) throw new Error('Trulioo API key not found.');
+  
   const headers = {
-    'x-trulioo-api-key': `${apiKey || process.env.TRULIOO_API_KEY}`,
+    'x-trulioo-api-key': truliooApiKey,
     'Content-Type': 'application/json',
     'User-Agent': 'trulioo-proxy/1.0.0.0',
   };
@@ -46,4 +49,4 @@ const TruliooMiddleware = (config = {}) => {
   }
 }
 
-export default TruliooMiddleware;
+module.exports = truliooMiddleware;
