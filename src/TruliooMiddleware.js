@@ -5,7 +5,7 @@ const truliooMiddleware = (config = {}) => {
   
   const truliooApiKey = apiKey || process.env.TRULIOO_API_KEY;
   if (!truliooApiKey) throw new Error('Trulioo API key not found.');
-  
+
   const headers = {
     'x-trulioo-api-key': truliooApiKey,
     'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ const truliooMiddleware = (config = {}) => {
     if (req.url.match(/(.*)\/trulioo-api\/embedids\/tokens\/(.*)\w+/)) {
       const urlParts = req.url.split('/');
       const urlPublicKey = urlParts[urlParts.length - 1];
-      // override publicKey if it's passed as an environment or config 
+      // override publicKey if it's passed as an environment variable
       const embedIdPublicKey = process.env.TRULIOO_EMBEDID_PUBLIC_KEY || urlPublicKey;
 
       try {
