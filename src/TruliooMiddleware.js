@@ -17,7 +17,7 @@ const truliooMiddleware = (config = {}) => {
   const url = `${accessTokenBaseURL}/embedids/tokens`;
 
   return (req, res, next) => {
-    if (req.url.match(/(.*)\/trulioo-api\/embedids\/tokens\/(.*)\w+/)) {
+    if (req.url.match(/\/trulioo-api\/embedids\/tokens\/\w+/)) {
       const urlParts = req.url.split('/');
       const urlPublicKey = urlParts[urlParts.length - 1];
       // override publicKey if it's passed as an environment variable
