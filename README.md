@@ -6,7 +6,7 @@
 
 ### EmbedId Middleware for Node Applications 🚀
 
-### **This SDK works in conjuction with the [Trulioo EmbedId Client](https://github.com/Trulioo/trulioo-embedid-client).**
+### **This SDK works in conjunction with the [Trulioo EmbedId Client](https://github.com/Trulioo/trulioo-embedid-client).**
 **Please ensure that the client is installed and implemented on your frontend along with this backend SDK.**
 
 Grab your `TRULIOO_API_KEY` and `TRULIOO_EMBEDID_PUBLIC_KEY` from the [Trulioo Dev Portal](https://gateway-admin.trulioo.com/) and start using EmbedID 👾
@@ -21,7 +21,7 @@ In order for the middleware to make transactions to our services, the API key yo
 
 Passing the API key can be done in one of two ways described below.
 
-### Using the options object
+### Using the config object
 
 The easiest way to pass the API key to the middleware is through an object with the `apiKey` field:
 

@@ -1,4 +1,4 @@
-declare interface Options {
+declare interface Config {
   apiKey?: string;
 }
 
@@ -13,10 +13,10 @@ declare interface Options {
  * Please note that the trulioo-embedid-client package must be used in conjunction with this middleware
  * in order to get the EmbedId public key needed to retrieve the access token.
  * 
- * @param {string=} options.apiKey - Your Trulioo API key.
+ * @param {string=} config.apiKey - Your Trulioo API key.
  * @return {Function} Callback function that takes the request and response, and optionally takes the next function.
  */
-declare function TruliooMiddleware(options?: Options) {
+declare function TruliooMiddleware(config?: Config) {
   declare function Callback(req: object, res: object, next?: Function): void;
   return Callback;
 };
