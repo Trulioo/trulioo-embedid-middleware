@@ -1,3 +1,3 @@
-const truliooClient = require('./TruliooClient');
+const truliooMiddleware = require('./TruliooMiddleware');
 
-module.exports = truliooClient;
+module.exports = truliooMiddleware;

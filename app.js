@@ -3,10 +3,12 @@ require('dotenv').config();
 const app = express();
 const port = 3010;
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-require('./src/main')(app);
-
-app.get('/', (req, res) => {
-  res.send('go to /trulioo-api/embedids/tokens/:publicKey 🚀');
+// Pass apiKey to imported middleware module (or define in TRULIOO_API_KEY environment variable)
+const truliooMiddleware = require('./src/main')({
+  apiKey: '<Trulioo API Key>'
 });
+
+// Use the Trulioo EmbedId middleware
+app.use(truliooMiddleware);
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
