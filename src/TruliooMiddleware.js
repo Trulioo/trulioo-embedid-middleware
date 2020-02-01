@@ -9,7 +9,7 @@ const truliooMiddleware = (config = {}) => {
   const headers = {
     'x-trulioo-api-key': truliooApiKey,
     'Content-Type': 'application/json',
-    'User-Agent': 'trulioo-proxy/1.0.0.0',
+    'User-Agent': 'embedidnode/v1.0',
   };
 
   // override default Trulioo EmbedID Base URL if it's defined as an environment variable
