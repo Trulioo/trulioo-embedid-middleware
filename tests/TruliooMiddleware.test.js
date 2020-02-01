@@ -27,7 +27,7 @@ describe('Trulioo Middleware', () => {
       url: 'https://api-gateway-admin.trulioo.com/embedids/tokens',
       headers: {
         'Content-Type': 'application/json',
-        'User-Agent': 'trulioo-proxy/1.0.0.0',
+        'User-Agent': 'embedidnode/v1.0',
       },
       json: {
         publicKey
