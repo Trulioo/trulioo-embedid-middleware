@@ -13,11 +13,11 @@ describe('Trulioo Middleware', () => {
   let apiKey;
 
   let req = {};
-  let res = {
+  const res = {
     setHeader: jest.fn(),
-    end: jest.fn()
+    end: jest.fn(),
   };
-  let next = jest.fn();
+  const next = jest.fn();
 
   beforeEach(() => {
     publicKey = 'testPublicKey';
@@ -27,10 +27,10 @@ describe('Trulioo Middleware', () => {
       url: 'https://api-gateway-admin.trulioo.com/embedids/tokens',
       headers: {
         'Content-Type': 'application/json',
-        'User-Agent': 'embedidnode/v1.0',
+        'user-agent': 'embedidnodeat/v1.0',
       },
       json: {
-        publicKey
+        publicKey,
       },
     };
     expectedResponseCallback = (error, _, body) => {
@@ -44,7 +44,7 @@ describe('Trulioo Middleware', () => {
     apiKey = 'testApiKey';
     req = {
       ...req,
-      url: backendRequestUrl
+      url: backendRequestUrl,
     };
   });
 
@@ -54,7 +54,7 @@ describe('Trulioo Middleware', () => {
       try {
         truliooMiddleware()(req, res, next);
       } catch (error) {
-        expect(error).toStrictEqual(new Error('Trulioo API key not found.'))
+        expect(error).toStrictEqual(new Error('Trulioo API key not found.'));
       }
     });
   });
@@ -65,9 +65,9 @@ describe('Trulioo Middleware', () => {
         ...expectedRequest,
         headers: {
           ...expectedRequest.headers,
-          "x-trulioo-api-key": apiKey
-        }
-      }
+          'x-trulioo-api-key': apiKey,
+        },
+      };
 
       truliooMiddleware({ apiKey })(req, res, next);
     });
@@ -78,7 +78,7 @@ describe('Trulioo Middleware', () => {
 
     it('should not call the next function', () => {
       expect(next).not.toHaveBeenCalled();
-    })
+    });
   });
 
   describe('API key is passed through environment variable', () => {
@@ -87,9 +87,9 @@ describe('Trulioo Middleware', () => {
         ...expectedRequest,
         headers: {
           ...expectedRequest.headers,
-          "x-trulioo-api-key": apiKey
-        }
-      }
+          'x-trulioo-api-key': apiKey,
+        },
+      };
       process.env.TRULIOO_API_KEY = apiKey;
 
       truliooMiddleware()(req, res, next);
@@ -108,7 +108,7 @@ describe('Trulioo Middleware', () => {
     beforeEach(() => {
       req = {
         ...req,
-        url: "invalidurl"
+        url: 'invalidurl',
       };
     });
 
@@ -117,7 +117,7 @@ describe('Trulioo Middleware', () => {
 
       expect(next).not.toHaveBeenCalled();
     });
-  
+
     it('should call the next function if next function exists', () => {
       truliooMiddleware({ apiKey })(req, res, next);
 
