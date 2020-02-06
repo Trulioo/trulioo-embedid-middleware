@@ -2,14 +2,14 @@ const request = require('request');
 
 const truliooMiddleware = (config = {}) => {
   const { apiKey } = config;
-  
+
   const truliooApiKey = apiKey || process.env.TRULIOO_API_KEY;
   if (!truliooApiKey) throw new Error('Trulioo API key not found.');
 
   const headers = {
     'x-trulioo-api-key': truliooApiKey,
     'Content-Type': 'application/json',
-    'User-Agent': 'embedidnode/v1.0',
+    'User-Agent': 'embedidnodeat/v1.0',
   };
 
   // override default Trulioo EmbedID Base URL if it's defined as an environment variable
