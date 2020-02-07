@@ -34,10 +34,11 @@ const truliooMiddleware = (config = {}) => {
           json: {
             publicKey: embedIdPublicKey
           },
-        }, (error, _, body) => {
+        }, (error, response, body) => {
           if (error) {
             throw new Error(error);
           }
+          res.statusCode = response.statusCode;
           res.end(JSON.stringify(body));
         });
       } catch (error) {
