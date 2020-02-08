@@ -2,18 +2,34 @@
 
 [![Github](https://github.com/Trulioo/trulioo-embedid-middleware/workflows/Build/badge.svg)](https://github.com/Trulioo/trulioo-embedid-node/workflows/Build/badge.svg)
 
+
+# Onboard verified customers instantly with [EmbedID](https://gateway-admin.trulioo.com/).
+Automatic form creation for any country. Get the right data at the right time for verifying new customers.
+
+Integrating EmbedID is done in a few easy steps. this package will help you deal with stage 5. Full steps:
+
+1. Go to [https://gateway-admin.trulioo.com](https://gateway-admin.trulioo.com/) to get access.
+2. Play with the [Author](https://gateway-admin.trulioo.com/author) tool to set the look and feel that's right for your brands onboarding experience.
+3. Save you settings.
+4. Add a script to your frontend where you want your onboarding experience to appear.
+5. **You're Here: Add Middleware to your backend to securely generate an access token for your experience.**
+6. Welcome verified customers!
+
+
+## Getting started with this repository
+Middleware for Node Applications 🚀
+
+Ensure you have completed steps 1-4 above.
+
+You will have your `TRULIOO_API_KEY` and `TRULIOO_EMBEDID_PUBLIC_KEY` from the [Trulioo Dev Portal](https://gateway-admin.trulioo.com/) from step 3 with the client installed and implemented on your frontend.
+
+This middleware creates a `/trulioo-api/embedids/tokens/<EmbedId public key>` endpoint on your server for requests from the Trulioo EmbedID Client to hit in order to retrieve an access token. The access token is returned to your frontend and is used by the client to authorize calls made in your EmbedID integration.
+
+## Install
+Install the middleware easily from [npm](https://www.npmjs.com/package/trulioo-embedid-middleware):
 `npm i trulioo-embedid-middleware`
 
-### EmbedId Middleware for Node Applications 🚀
-
-### **This SDK works in conjunction with the [Trulioo EmbedId Client](https://github.com/Trulioo/trulioo-embedid-client).**
-**Please ensure that the client is installed and implemented on your frontend along with this backend SDK.**
-
-Grab your `TRULIOO_API_KEY` and `TRULIOO_EMBEDID_PUBLIC_KEY` from the [Trulioo Dev Portal](https://gateway-admin.trulioo.com/) and start using EmbedID 👾
-
-This middleware creates a `/trulioo-api/embedids/tokens/<EmbedId public key>` endpoint on your server for requests from the Trulioo EmbedId Client to hit in order to retrieve an access token. The access token is returned to your frontend and is used by the client to authorize calls made in your EmbedId integration.
-
-## Passing your API key to EmbedId Middleware
+## Passing your API key to EmbedID Middleware
 
 In order for the middleware to make transactions to our services, the API key you received from the developer portal needs to be passed.
 
@@ -54,7 +70,7 @@ const truliooMiddleware = require('trulioo-embedid-middleware')({ apiKey: <Truli
 const express = require('express');
 const app = express();
 
-// Use the Trulioo EmbedId middleware
+// Use the Trulioo EmbedID middleware
 app.use(truliooMiddleware);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
@@ -67,7 +83,7 @@ const truliooMiddleware = require('trulioo-embedid-middleware')({ apiKey: <Truli
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  // Use the Trulioo EmbedId middleware
+  // Use the Trulioo EmbedID middleware
   truliooMiddleware(req, res);
 
   req.on('end', () => {
