@@ -6,7 +6,7 @@
 # Onboard verified customers instantly with [EmbedID](https://gateway-admin.trulioo.com/).
 Automatic form creation for any country. Get the right data at the right time for verifying new customers.
 
-Integrating EmbedID is done in a few easy steps. this package will help you deal with stage 5. Full steps:
+Integrating EmbedID is done in a few easy steps. This package will help you deal with stage 5. Full steps:
 
 1. Go to [https://gateway-admin.trulioo.com](https://gateway-admin.trulioo.com/) to get access.
 2. Play with the [Author](https://gateway-admin.trulioo.com/author) tool to set the look and feel that's right for your brands onboarding experience.
