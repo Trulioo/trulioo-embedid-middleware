@@ -10,7 +10,7 @@ Integrating EmbedID is done in a few easy steps. this package will help you deal
 
 1. Go to [https://gateway-admin.trulioo.com](https://gateway-admin.trulioo.com/) to get access.
 2. Play with the [Author](https://gateway-admin.trulioo.com/author) tool to set the look and feel that's right for your brands onboarding experience.
-3. Save you settings.
+3. Save your settings.
 4. Add a script to your frontend where you want your onboarding experience to appear.
 5. **You're Here: Add Middleware to your backend to securely generate an access token for your experience.**
 6. Welcome verified customers!
