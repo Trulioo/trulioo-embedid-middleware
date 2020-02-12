@@ -3,7 +3,7 @@
   "description": "Middleware for EmbedID integration",
   "main": "src/main.js",
   "typings": "src/main.d.ts",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "dependencies": {
     "dotenv": "^8.2.0",
     "request": "^2.88.0"
